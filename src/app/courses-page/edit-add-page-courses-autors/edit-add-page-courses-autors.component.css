@@ -1,0 +1,21 @@
+.authors-container {
+    width: 50%;
+    border: 1px solid #a9a9a9;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+:host(.ng-invalid.ng-touched) .authors-container {
+    border-color: brown;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.author:last-of-type {
+    margin-bottom: 0;
+}

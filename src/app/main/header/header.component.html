@@ -1,0 +1,11 @@
+<div class="top-header">
+  <app-logo></app-logo>
+  <div class="user-panel" *ngIf="!!login">
+    <span style="margin: 0 5px">Вы авторизованы как:</span> 
+    <b>{{ login }}</b>
+    <button class="main-button main-button--logout" (click)="logOut()">Выход</button>
+  </div>
+</div>
+<div style="text-align: center">
+  <img src="/assets/header_text_3.png">
+</div>

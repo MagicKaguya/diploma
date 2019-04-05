@@ -1,0 +1,8 @@
+:host(.ng-invalid.ng-touched) input {
+  border-color: brown;
+}
+
+.course-date {
+    width: 15%;
+    height: 20px;
+}

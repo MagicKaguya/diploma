@@ -1,0 +1,12 @@
+<div *ngIf='showVisiblePop()' class="container-popup">
+  <div class="popup">
+    <div class="popup-content">
+      <h3>Do you really want to delete this course?</h3>
+      <img src="../assets/delete-img.jpg" class="delete-img">
+      <div class="popup-buttons">
+        <button class="popup-button" (click)="acceptDelete()">Yes</button>
+        <button class="popup-button" (click)="undoDelete()">No</button>
+      </div>
+    </div>
+  </div>
+</div>

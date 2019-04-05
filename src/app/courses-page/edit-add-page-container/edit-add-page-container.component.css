@@ -1,0 +1,35 @@
+.edit-add-page-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    margin: 4% 0 4% 0;
+    padding-left: 5%;
+}
+
+.error-message {
+  height: 20px;
+  color: brown;
+  font-size: 10px;
+}
+
+.course-description {
+    width: 90%;
+    height: 50px;
+}
+
+.course-title {
+    width: 90%;
+    height: 20px;
+}
+
+.save-cancel-buttons {
+    margin: 5% 2%;
+}
+
+.save-button {
+    margin: 0 2%;
+}
+
+.ng-touched.ng-invalid:not(.edit-add-page-container) {
+  border-color: brown;
+}

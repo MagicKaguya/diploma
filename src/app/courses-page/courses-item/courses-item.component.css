@@ -1,0 +1,59 @@
+.courses-item {
+    display: flex;
+    height: 100px;
+    border: 1px solid grey; 
+    margin: 1% 0;
+}
+
+.video-info {
+    width: 800px;
+}
+
+.main-video-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45%;
+}
+
+.video-title {
+    margin: 2% 3%;
+}
+
+.video-timedate {
+    width: 200px;
+}
+
+.video-date {
+    padding: 0 0 0 5%;
+}
+
+.video-description {
+    margin: 0 3%;
+    height: 55%;
+    text-align: left;  
+    word-wrap: break-word;
+    font-size: 10pt;
+    overflow: auto;
+}
+
+.video-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 15%;
+}
+
+.video-button {
+    margin: 5% 5%;
+    cursor: pointer;
+}
+
+.favorite-video {
+    width: 2%;
+    margin: 0 45% 0 0;
+}
+
+.favorite-video-filled {
+    background-color: #fccbc7;
+}

@@ -1,0 +1,24 @@
+<a routerLink="login">Have an account? Login!</a>
+<div class="authorization-container" [formGroup]="registrationForm">
+  <img src="../assets/authorization.png">
+  <div class="authorization-aside">
+    <div class="authorization-label">
+      <b>Login</b>
+    </div>
+    <div>
+      <input class="authorization-input" placeholder="Enter login" >
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <div class="authorization-label">
+      <b>Password</b>
+    </div>
+    <div>
+      <input class="authorization-input" type="password" placeholder="Enter password" >
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <button class="authorization-enter-button" (click)="onEnterClick()">Enter</button>
+  </div>
+  <div class="invorrect-authorization">{{ errorMessage }}</div>
+</div>

@@ -1,0 +1,42 @@
+.container-popup {
+    display: flex;
+    position: fixed;
+    padding: 0; 
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(66, 65, 67, 0.7);
+}
+
+.container-popup--visible {
+    display: flex;
+}
+
+.popup {
+    display: flex;
+    background-color: white;
+    width: 400px;
+    height: 300px;
+
+}
+
+.popup-content {
+    margin: auto;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.popup-button {
+    margin: 10% 5%;
+    cursor: pointer;
+}
+
+.delete-img {
+    margin: 0 35%;
+}

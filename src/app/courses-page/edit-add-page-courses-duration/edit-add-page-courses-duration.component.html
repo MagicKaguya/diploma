@@ -1,0 +1,5 @@
+<div>
+  <p>Duration</p>
+  <input [(ngModel)]="durationValue" (ngModelChange)="onDurationChange()" class="course-duration" (blur)=onTouched()>
+  <span>{{durationValue | durationAppointPipe}}</span>
+</div>

@@ -1,0 +1,14 @@
+.page-content {
+    display: flex; 
+    max-width: 1524px; 
+    min-width: 320px; 
+    flex-direction: column; 
+    margin: 0 auto; 
+    min-height: 100%;
+}
+
+* {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+

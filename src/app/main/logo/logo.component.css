@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  padding-left: 1%;
+}
+
+.logo__wrapper {
+  height: 80px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+
+}
+
+.logo__img {
+  width: 72px;
+  height: auto;
+  display: block;
+}

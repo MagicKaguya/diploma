@@ -1,0 +1,11 @@
+<div class="video-course-block">
+  <app-courses-item *ngFor="let item of courses|orderByPipe" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
+    (courseClick)="onRemoveCourseClick($event)">
+  </app-courses-item>
+</div>
+<div class="load-more-button-container" *ngIf='!isEmpty()'>
+  <button class="load-more-button" (click)="onLoadMoreClick()">LOAD MORE</button>
+</div>
+<div class="no-video-information" *ngIf='isEmpty()'>
+  NO DATA. FEEL FREE TO ADD NEW COURSE
+</div>

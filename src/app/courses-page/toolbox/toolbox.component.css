@@ -1,0 +1,22 @@
+.toolbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 1%;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.search-item {
+    width: 70%;
+    border: 0;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    background: #f4f4f4;
+    outline: none;
+    font-family: 'Roboto';
+}

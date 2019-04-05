@@ -1,0 +1,22 @@
+<div class="authorization-container" [formGroup]="form">
+  <img style="width: 5%" src="https://tse1.mm.bing.net/th?id=OIP.k2MHxL38IIrKOfLPdWDgywHaHa&pid=Api">
+  <div class="authorization-aside">
+    <div>
+      <input class="authorization-input" placeholder="Логин" [formControlName]="formControls.login">
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <div>
+      <input class="authorization-input" type="password" placeholder="Пароль" [formControlName]="formControls.password">
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <button class="main-button authorization-enter-button" (click)="onEnterClick()">Вход</button>
+  </div>
+  <div class="invorrect-authorization">{{ errorMessage }}</div>
+  <div class="not-account">
+      <img class="not-account-description" src="//img.echosting.cafe24.com/skin/base/common/ico_arrow.png"/>
+      <span>Всё ещё нет аккаунта? Тогда присоединяйтесь и с уверенностью планируйте наперёд!</span>
+      <button class="main-button main-button--join" routerLink="registration">Присоединиться</button>
+  </div>
+</div>

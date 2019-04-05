@@ -1,0 +1,19 @@
+<div class="courses-item" [appCorsesBorder]="coursesItem.creationDate">
+  <section class="video-info">
+    <div class="main-video-info">
+      <h4 class="video-title">{{coursesItem.title|uppercase}}</h4>
+      <img [ngClass]="{'favorite-video-filled': coursesItem.topRated, 'favorite-video': true}" src="../assets/star.png">
+      <div class="video-timedate">
+        <span class="video-duration">{{coursesItem.duration|durationAppointPipe}}</span>
+        <span class="video-date">{{coursesItem.creationDate|date:'MM.dd.yyyy'}}</span>
+      </div>
+    </div>
+    <div class="video-description">
+      {{coursesItem.description}}
+    </div>
+  </section>
+  <div class="video-buttons">
+    <button (click)="editCourseClick(coursesItem.id)" class="video-button">Edit</button>
+    <button (click)="onCourseClick(coursesItem.id)" class="video-button">Delete</button>
+  </div>
+</div>

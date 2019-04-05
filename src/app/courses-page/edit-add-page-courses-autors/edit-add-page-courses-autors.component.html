@@ -1,0 +1,9 @@
+<div>
+  <p>Authors</p>
+  <div class="authors-container">
+    <div *ngFor="let author of authorControls" class="author">
+      <input type="checkbox" [id]="author.id" [(ngModel)]="author.isSelected" (ngModelChange)="onAuthorBoxClick()">
+      <label [for]="author.id">{{ author.firstName }} {{ author.lastName }}</label>
+    </div>
+  </div>
+</div>

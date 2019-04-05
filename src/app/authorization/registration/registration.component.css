@@ -1,0 +1,60 @@
+.authorization-container {
+    display: flex;
+    flex-direction: column;
+    vertical-align: baseline;
+    align-items: center;
+    margin: 0 auto;
+    height: 350px;
+    background: white;
+    padding: 10% 0;
+}
+
+.authorization-aside {
+    display: flex;
+    margin:0 0 5% 1%;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.authorization-label {
+    padding: 0 5%;
+    margin-top: 1%;
+    text-align: right;
+    width: 30%;
+}
+
+.authorization-input {
+    height: 30px;
+}
+
+.authorization-input.ng-touched.ng-invalid {
+    border-color: brown;
+}
+
+.authorization-input-error {
+    height: 20px;
+    color: brown;
+    font-size: 10px;
+}
+
+.incorrect-data {
+    border: 1px solid brown;
+}
+
+.authorization-enter-button {
+    margin-left: 40.5%;
+    height: 30px;
+    padding: 0 7%;
+}
+
+.invorrect-authorization {
+    color: brown;
+}
+
+.not-users-container {
+    padding: 10% 30%;
+}
+
+.not-users-message {
+    text-align: center;
+}

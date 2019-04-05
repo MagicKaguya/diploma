@@ -1,0 +1,22 @@
+<div class="edit-add-page-container" [formGroup]="form">
+  <div>
+    <p>Title</p>
+    <input [formControlName]="formControls.title" class="course-title">
+    <div class="error-message">{{ errorMessage(formControls.title) }}</div>
+  </div>
+  <div>
+    <p>Description</p>
+    <textarea [formControlName]="formControls.description" class="course-description"></textarea>
+    <div class="error-message">{{ errorMessage(formControls.description) }}</div>
+  </div>
+  <app-edit-add-page-courses-date [formControlName]="formControls.date"></app-edit-add-page-courses-date>
+  <div class="error-message">{{ errorMessage(formControls.date) }}</div>
+  <app-edit-add-page-courses-duration [formControlName]="formControls.duration"></app-edit-add-page-courses-duration>
+  <div class="error-message">{{ errorMessage(formControls.duration) }}</div>
+  <app-edit-add-page-courses-autors [authors]="authors" [formControlName]="formControls.authors"></app-edit-add-page-courses-autors>
+  <div class="error-message">{{ errorMessage(formControls.authors) }}</div>
+  <div class="save-cancel-buttons">
+    <button (click)="saveChanges()" class="save-button">Save</button>
+    <button (click)="cancelOperation()">Cancel</button>
+  </div>
+</div>

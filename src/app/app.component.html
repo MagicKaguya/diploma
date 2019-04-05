@@ -1,0 +1,7 @@
+<div class="page-content">
+  <app-header></app-header>
+  <app-loader [isShown]="!isInitialized || isLoaderShown">
+    <router-outlet *ngIf="isInitialized"></router-outlet>
+  </app-loader>
+  <app-footer></app-footer>
+</div>
