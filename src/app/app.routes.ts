@@ -6,9 +6,11 @@ import { AuthorizationComponent } from './authorization/authorization/authorizat
 import { AuthorizeGuard } from './guards/authorize.guard';
 import { LoginGuard } from './guards/login.guard';
 import { RegistrationComponent } from './authorization/registration/registration.component';
+import { GroupsContainerComponent } from './courses-page/groups-container/groups-container.component';
 
 export const ROUTES: Route[] = [
     { path: '', redirectTo: 'courses', pathMatch: 'full' },
+    { path: 'groups', component: GroupsContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'courses', component: CoursesPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'courses/:id', component: EditAddPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'login', component: AuthorizationComponent, canActivate: [LoginGuard] },

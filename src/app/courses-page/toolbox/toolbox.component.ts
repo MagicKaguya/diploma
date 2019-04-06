@@ -12,6 +12,7 @@ export class ToolboxComponent implements OnInit, OnDestroy  {
   @Output() search: EventEmitter<string> = new EventEmitter();
 
   public searchValue: string;
+  public isGroupsShow: boolean;
 
   private searchChange$: Subject<string> = new Subject();
   private searchSubscription: Subscription;
@@ -19,13 +20,15 @@ export class ToolboxComponent implements OnInit, OnDestroy  {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    this.isGroupsShow = this.router.url === '/groups';
+
     this.searchSubscription = this.searchChange$
       .pipe(
         filter(v => !v || v.length > 2),
         distinctUntilChanged(),
         debounceTime(1000)
       )
-      .subscribe(value => this.search.emit(value))
+      .subscribe(value => this.search.emit(value));
   }
 
   ngOnDestroy() {

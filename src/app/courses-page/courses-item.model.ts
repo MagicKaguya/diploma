@@ -7,5 +7,6 @@ export interface CoursesItem {
     duration: number
     description: string
     topRated: boolean,
+    groupId?: string,
     authors?: Author[]
 }

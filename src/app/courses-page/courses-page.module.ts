@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToolboxComponent } from './toolbox/toolbox.component';
@@ -17,6 +17,9 @@ import { EditAddPageCoursesAutorsComponent } from './edit-add-page-courses-autor
 import { EditAddPageCoursesDateComponent } from './edit-add-page-courses-date/edit-add-page-courses-date.component';
 import { EditAddPageCoursesDurationComponent } from './edit-add-page-courses-duration/edit-add-page-courses-duration.component';
 import {ButtonModule} from 'primeng/button';
+import { GroupsListComponent } from './groups-list/groups-list.component';
+import { GroupsContainerComponent } from './groups-container/groups-container.component';
+import { GroupsItemComponent } from './groups-item/groups-item.component';
 
 @NgModule({
   imports: [
@@ -26,8 +29,9 @@ import {ButtonModule} from 'primeng/button';
     PipeModule,
     ButtonModule
   ],
-  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, OrderByPipePipe, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent],
-  exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent],
-  providers: [SearchPipePipe, CoursesService]
+  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, OrderByPipePipe, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsContainerComponent, GroupsItemComponent],
+  exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent, GroupsContainerComponent, GroupsListComponent],
+  providers: [SearchPipePipe, CoursesService],
+  // schemas: [NO_ERRORS_SCHEMA]
 })
 export class CoursesPageModule { }

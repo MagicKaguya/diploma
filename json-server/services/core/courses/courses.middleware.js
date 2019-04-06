@@ -15,10 +15,26 @@ module.exports = (server) => {
         server.db.setState(state);
     }
 
+    function addGroup(group) {
+        // const state = _.cloneDeep(server.db.getState());
+
+        // const newId = Math.max(...state.courses.map(({id}) => id)) + 1;
+        // course.id = newId;
+        state.groups.push(group);
+
+        server.db.setState(state);
+    }
+
     function getCourse(id) {
         const {courses} = server.db.getState();
 
         return courses.find((course) => course.id === id);
+    }
+
+    function getGroup(id) {
+        const {groups} = server.db.getState();
+
+        return groups.find((group) => group.id === id);
     }
 
     function editCourse(id, editedCourse) {
@@ -61,7 +77,9 @@ module.exports = (server) => {
         res.send('');
     }
 
-    router.get('/courses', (req, res, next) => {
+    router.get('/groups/:id/courses', (req, res, next) => {
+        const groupId = +req.params.id;
+
         let url_parts = url.parse(req.originalUrl, true),
             query = url_parts.query,
             from = query.start || 0,
@@ -69,6 +87,8 @@ module.exports = (server) => {
             sort = query.sort,
             queryStr = query.query,
             courses = server.db.getState().courses;
+
+        courses = courses.filter(course => course.groupId === groupId);
 
         if (!!query.textFragment) {
             courses = courses.filter((course) => course.title.concat(course.description).toUpperCase().indexOf(query.textFragment.toUpperCase()) >= 0);
@@ -80,6 +100,38 @@ module.exports = (server) => {
         courses = courses.slice(from, to);
 
         res.json(courses);
+    });
+
+    router.get('/groups', (req, res, next) => {
+        const {groups} = server.db.getState();
+
+        res.json(groups);
+    });
+
+    router.get('/groups/:id', (req, res, next) => {
+        const groupId = +req.params.id;
+
+        const foundGroup = getGroup(groupId);
+
+        if (!foundGroup) {
+            sendBadRequest(res);
+            return;
+        }
+
+        res.json(foundGroup);
+    });
+
+    router.post('/groups', (req, res, next) => {
+        const group = req.body;
+
+        // if (!validateCourse(course)) {
+        //     sendBadRequest(res);
+        //     return;
+        // }
+
+        addGroup(group);
+
+        sendOk(res);
     });
 
     router.post('/courses', (req, res, next) => {

@@ -1,8 +1,8 @@
 .video-course-block {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .load-more-button {

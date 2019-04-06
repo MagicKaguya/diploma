@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { CoursesItem } from './courses-item.model';
 import { map } from 'rxjs/operators';
 import { ApiService } from '../api/api.service';
+import { Group } from './groups.model';
 
 
 @Injectable()
@@ -20,6 +21,16 @@ export class CoursesService {
     )
       .pipe(
         map((res) => res ? res as CoursesItem[] : [])
+      );
+  }
+
+  public getGroups$(isLoaderShown: boolean): Observable<Group[]> {
+    return this.apiService.get(
+      `/api/groups`,
+      isLoaderShown
+    )
+      .pipe(
+        map((res) => res ? res as Group[] : [])
       );
   }
 

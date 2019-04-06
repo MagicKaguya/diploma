@@ -1,24 +1,31 @@
-<a routerLink="login">Have an account? Login!</a>
 <div class="authorization-container" [formGroup]="registrationForm">
-  <img src="../assets/authorization.png">
   <div class="authorization-aside">
-    <div class="authorization-label">
-      <b>Login</b>
-    </div>
     <div>
-      <input class="authorization-input" placeholder="Enter login" >
+      <input class="authorization-input" title="Только буквы латинского алфавита и цифры" placeholder="Логин" formControlName="login">
     </div>
   </div>
   <div class="authorization-aside">
-    <div class="authorization-label">
-      <b>Password</b>
-    </div>
     <div>
-      <input class="authorization-input" type="password" placeholder="Enter password" >
+      <input class="authorization-input" type="password" placeholder="Пароль" formControlName="password">
     </div>
   </div>
   <div class="authorization-aside">
-    <button class="authorization-enter-button" (click)="onEnterClick()">Enter</button>
+    <div>
+      <input class="authorization-input" type="password" placeholder="Имя" formControlName="firstName">
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <div>
+      <input class="authorization-input" type="password" placeholder="Фамилия" formControlName="lastName">
+    </div>
+  </div>
+  <div class="authorization-aside">
+    <button class="main-button authorization-enter-button" (click)="onEnterClick()">Регистрация</button>
   </div>
   <div class="invorrect-authorization">{{ errorMessage }}</div>
+  <div class="not-account is-account">
+      <img class="not-account-description" src="//img.echosting.cafe24.com/skin/base/common/ico_arrow.png"/>
+      <span>Уже есть аккаунт? Тогда не стесняйтесь и скорее заходите в свой календарь!</span>
+      <button class="main-button main-button--join" routerLink="/login">Войти</button>
+  </div>
 </div>

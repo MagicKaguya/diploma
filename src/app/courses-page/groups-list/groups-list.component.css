@@ -1,0 +1,6 @@
+.group-block {
+    padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

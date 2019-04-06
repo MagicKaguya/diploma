@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../courses.service';
 import { PopupService } from '../popup.service';
 import { CoursesItem } from '../courses-item.model';
+import { Group } from '../groups.model';
 
 @Component({
   selector: 'app-courses-page-container',

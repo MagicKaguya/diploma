@@ -6,14 +6,14 @@
     margin: 0 auto;
     height: 350px;
     background: white;
-    padding: 10% 0;
+    padding: 5% 0 10%;
 }
 
 .authorization-aside {
     display: flex;
-    margin:0 0 5% 1%;
     padding-top: 2%;
     width: 100%;
+    justify-content: center;
 }
 
 .authorization-label {
@@ -25,6 +25,9 @@
 
 .authorization-input {
     height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-family: 'Roboto';
 }
 
 .authorization-input.ng-touched.ng-invalid {
@@ -42,7 +45,6 @@
 }
 
 .authorization-enter-button {
-    margin-left: 40.5%;
     height: 30px;
     padding: 0 7%;
 }
@@ -57,4 +59,28 @@
 
 .not-users-message {
     text-align: center;
+}
+
+.not-account {
+    display: flex;
+    max-width: 300px;
+    margin-top: 20px;
+    padding-top: 60px;
+    color: #757575;
+    border-top: 1px solid #e9e9e9;
+}
+
+.is-account {
+    padding-top: 25px;
+}
+
+.not-account-description {
+    padding: 10px;
+    height: 6px;
+}
+
+.heck {
+    position: relative;
+    bottom: 26px;
+    left: 109px;
 }

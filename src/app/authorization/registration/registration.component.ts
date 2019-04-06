@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfo } from '../user-info.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -8,15 +9,26 @@ import { UserInfo } from '../user-info.model';
 })
 export class RegistrationComponent implements OnInit {
 
-  public registrationForm: UserInfo[];
+  public registrationForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.createForm();
   }
 
-  public createForm() {
-    this.registrationForm
+  public createForm(): FormGroup {
+    this.registrationForm = this.formBuilder.group({
+      id: [1],
+      fakeToken: [''],
+      login: [''],
+      password: [''],
+      firstName: [''],
+      lastName: ['']
+    });
+    return this.registrationForm;
   }
 
 }
