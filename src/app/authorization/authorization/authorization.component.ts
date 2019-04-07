@@ -55,7 +55,7 @@ export class AuthorizationComponent implements OnInit {
 
     this.authorizationService.logIn(login, password)
       .subscribe(() => {
-        this.router.navigateByUrl('/courses');
+        this.router.navigateByUrl('/groups');
       }, (error) => {
         if (error.status === 401) {
           this.isUnauthorized = true;

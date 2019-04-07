@@ -78,7 +78,7 @@ module.exports = (server) => {
     }
 
     router.get('/groups/:id/courses', (req, res, next) => {
-        const groupId = +req.params.id;
+        const groupId = req.params.id;
 
         let url_parts = url.parse(req.originalUrl, true),
             query = url_parts.query,
@@ -90,15 +90,14 @@ module.exports = (server) => {
 
         courses = courses.filter(course => course.groupId === groupId);
 
-        if (!!query.textFragment) {
-            courses = courses.filter((course) => course.title.concat(course.description).toUpperCase().indexOf(query.textFragment.toUpperCase()) >= 0);
-        }
+        // if (!!query.textFragment) {
+        //     courses = courses.filter((course) => course.title.concat(course.description).toUpperCase().indexOf(query.textFragment.toUpperCase()) >= 0);
+        // }
 
-        if (courses.length < to || !to) {
-            to = courses.length;
-        }
-        courses = courses.slice(from, to);
-
+        // if (courses.length < to || !to) {
+        //     to = courses.length;
+        // }
+        // courses = courses.slice(from, to);
         res.json(courses);
     });
 

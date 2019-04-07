@@ -3,9 +3,9 @@
     (courseClick)="onRemoveCourseClick($event)">
   </app-courses-item>
 </div>
-<div class="load-more-button-container" *ngIf='!isEmpty()'>
+<div class="centered-text" *ngIf='!isEmpty()'>
   <button class="load-more-button" (click)="onLoadMoreClick()">LOAD MORE</button>
 </div>
 <div class="no-video-information" *ngIf='isEmpty()'>
-  NO DATA. FEEL FREE TO ADD NEW COURSE
+  <span class="centered-text">Пусто! Поскорее создайте новое событие.</span>
 </div>

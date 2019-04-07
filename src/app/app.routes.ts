@@ -11,7 +11,7 @@ import { GroupsContainerComponent } from './courses-page/groups-container/groups
 export const ROUTES: Route[] = [
     { path: '', redirectTo: 'courses', pathMatch: 'full' },
     { path: 'groups', component: GroupsContainerComponent, canActivate: [AuthorizeGuard] },
-    { path: 'courses', component: CoursesPageContainerComponent, canActivate: [AuthorizeGuard] },
+    { path: 'groups/:id/courses', component: CoursesPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'courses/:id', component: EditAddPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'login', component: AuthorizationComponent, canActivate: [LoginGuard] },
     { path: 'registration', component: RegistrationComponent },

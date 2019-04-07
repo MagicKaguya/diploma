@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./courses-list.component.css']
 })
 export class CoursesListComponent {
-  @Input() public courses: CoursesItem[] = [];
+
+  @Input() courses: CoursesItem[] = [];
   @Output() loadMore: EventEmitter<void> = new EventEmitter();
   @Output() removeCourse: EventEmitter<number> = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+   }
 
   onLoadMoreClick() {
     this.loadMore.emit();

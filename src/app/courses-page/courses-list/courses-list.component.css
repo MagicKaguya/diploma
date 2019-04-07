@@ -11,16 +11,18 @@
     margin: 2% 5%;
 }
 
-.load-more-button-container{
+.centered-text{
     text-align: center;
 }
 
 .no-video-information {
     display: flex;
-    height: 50px;
-    border: 1px solid grey; 
-    border-bottom: none;
-    margin: 1% 2% 0 2%;
+    height: 200px;
+    width: 20%;
+    border: 1px solid rgba(163, 161, 161, 0.548);
+    background: #f4f4f4;
+    margin: 5%;
+    margin-left: 40%;
     justify-content: center;
     align-items: center;
 }

@@ -14,9 +14,10 @@ export class CoursesService {
     this.mySubject = new BehaviorSubject('');
   }
 
-  public getList$(count: number, query: string, isLoaderShown: boolean): Observable<CoursesItem[]> {
+  public getList$(id: string, isLoaderShown: boolean): Observable<CoursesItem[]> {
     return this.apiService.get(
-      `/api/courses?count=${count}&start=0${query ? '&textFragment=' + query : ''}`,
+      // `/api/groups/${id}/courses?count=${count}&start=0${query ? '&textFragment=' + query : ''}`,
+      `/api/groups/${id}/courses`,
       isLoaderShown
     )
       .pipe(
