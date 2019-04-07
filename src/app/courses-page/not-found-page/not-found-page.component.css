@@ -1,7 +1,21 @@
 .not-found-page-container {
+    display: flex;
+    align-items: center;
+    margin: 5%;
     padding: 10% 30%;
 }
 
 .not-found-page-message {
     text-align: center;
+    margin-left: 50px;
+    font-size: 20px
+}
+
+.not-found-page-img {
+    width: 60%;
+    height: 100%;
+}
+
+.redirect-button {
+    margin-top: 20px;
 }
