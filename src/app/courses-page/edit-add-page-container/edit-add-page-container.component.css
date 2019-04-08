@@ -1,8 +1,8 @@
 .edit-add-page-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid gray;
-    margin: 4% 0 4% 0;
+    border: 1px solid rgba(163, 161, 161, 0.548);
+    margin: 4%;
     padding-left: 5%;
 }
 

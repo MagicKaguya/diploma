@@ -42,4 +42,8 @@ export class ToolboxComponent implements OnInit, OnDestroy  {
   addCourse() {
     this.router.navigateByUrl('/courses/new');
   }
+
+  addGroup() {
+    this.router.navigateByUrl('/groups/new');
+  }
 }

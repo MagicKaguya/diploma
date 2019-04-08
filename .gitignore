@@ -62,4 +62,4 @@ typings/
 
 # package
 
-package*.json
+package-lock.json
