@@ -1,4 +1,8 @@
-<div class="group-block">
-  <app-groups-item *ngFor="let item of groups" [groupItem]="item" (groupClick)="onOpenGroupClick($event)">
-  </app-groups-item>
+<div>
+  <app-toolbox></app-toolbox>
+  <div class="group-block">
+    <app-groups-item *ngFor="let item of groups" [groupItem]="item" (groupClick)="onOpenGroupClick($event)"
+      (removeGroup)="removeGroupClick($event)">
+    </app-groups-item>
+  </div>
 </div>

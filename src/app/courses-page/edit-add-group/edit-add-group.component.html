@@ -1,3 +1,20 @@
-<p>
-  edit-add-group works!
-</p>
+<div class="authorization-aside" [formGroup]="groupForm">
+  <div>
+    <b>Введите название группы</b>
+  </div>
+  <div>
+    <input class="authorization-input" placeholder="Группа" formControlName="name">
+  </div>
+  <div>
+    <b>Сгенерированный идентификатор</b>
+  </div>
+  <div>
+    <input class="authorization-input" placeholder="Id" formControlName="id" readonly>
+  </div>
+  <div >
+    <button style="margin-bottom: 30px;" class="main-button video-button"
+      (click)="saveGroup()" [disabled]="isConfirmButtonDisabled">Подтвердить</button>
+    <button style="margin-bottom: 30px; margin-left: 30px" class="main-button video-button"
+      (click)="cancel()">Отмена</button>
+  </div>
+</div>

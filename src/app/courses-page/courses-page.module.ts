@@ -18,7 +18,6 @@ import { EditAddPageCoursesDateComponent } from './edit-add-page-courses-date/ed
 import { EditAddPageCoursesDurationComponent } from './edit-add-page-courses-duration/edit-add-page-courses-duration.component';
 import {ButtonModule} from 'primeng/button';
 import { GroupsListComponent } from './groups-list/groups-list.component';
-import { GroupsContainerComponent } from './groups-container/groups-container.component';
 import { GroupsItemComponent } from './groups-item/groups-item.component';
 import { EditAddGroupComponent } from './edit-add-group/edit-add-group.component';
 
@@ -30,8 +29,8 @@ import { EditAddGroupComponent } from './edit-add-group/edit-add-group.component
     PipeModule,
     ButtonModule
   ],
-  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, OrderByPipePipe, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsContainerComponent, GroupsItemComponent, EditAddGroupComponent],
-  exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent, GroupsContainerComponent, GroupsListComponent],
+  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, OrderByPipePipe, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsItemComponent, EditAddGroupComponent],
+  exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent, GroupsListComponent],
   providers: [SearchPipePipe, CoursesService],
   // schemas: [NO_ERRORS_SCHEMA]
 })

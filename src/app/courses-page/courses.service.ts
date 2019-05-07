@@ -39,9 +39,17 @@ export class CoursesService {
     return this.apiService.delete(`/api/courses/${id}`);
   }
 
+  public removeGroup$(id): Observable<Object> {
+    return this.apiService.delete(`/api/groups/${id}`);
+  }
+
   public getItemById$(id): Observable<CoursesItem> {
     return this.apiService.get(`/api/courses/${id}`)
       .pipe(map((response) => response as CoursesItem));
+  }
+
+  public createGroup$(group) {
+    return this.apiService.post('/api/groups', group);
   }
 
   public createCourse$(course) {

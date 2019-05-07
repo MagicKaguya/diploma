@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "es6",
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

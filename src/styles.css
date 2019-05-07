@@ -7,7 +7,6 @@
     background: #f4f4f4;
     outline: none;
     font-family: 'Roboto';
-    cursor: pointer;
 }
 
 .main-button--logout {
@@ -18,7 +17,24 @@
     margin: 25px 10px;
 }
 
-.main-button:hover {
+.main-button:hover:enabled {
+    cursor: pointer;
     background: #004b9c;
+    color: white;
+}
+
+.cancel-button {
+    border: 1px solid rgba(163, 161, 161, 0.548);
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    background: #f4f4f4;
+    outline: none;
+    font-family: 'Roboto';
+}
+
+.cancel-button:hover {
+    cursor: pointer;
+    background: #882a32;
     color: white;
 }

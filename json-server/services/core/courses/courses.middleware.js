@@ -16,7 +16,7 @@ module.exports = (server) => {
     }
 
     function addGroup(group) {
-        // const state = _.cloneDeep(server.db.getState());
+        const state = _.cloneDeep(server.db.getState());
 
         // const newId = Math.max(...state.courses.map(({id}) => id)) + 1;
         // course.id = newId;
@@ -63,6 +63,20 @@ module.exports = (server) => {
         }
 
         state.courses.splice(foundCourseIx, 1);
+
+        server.db.setState(state);
+    }
+
+    function removeGroup(id) {
+        const state = _.cloneDeep(server.db.getState());
+
+        const foundCourseIx = state.groups.findIndex((group) => group.id === id);
+
+        if (foundCourseIx === -1) {
+            return;
+        }
+
+        state.groups.splice(foundCourseIx, 1);
 
         server.db.setState(state);
     }
@@ -195,6 +209,14 @@ module.exports = (server) => {
         }
 
         removeCourse(courseId);
+
+        sendOk(res);
+    });
+
+    router.delete('/groups/:id', (req, res, next) => {
+        const groupId = req.params.id;
+
+        removeGroup(groupId);
 
         sendOk(res);
     });

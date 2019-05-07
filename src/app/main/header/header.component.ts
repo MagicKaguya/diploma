@@ -27,6 +27,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userSubscription.unsubscribe();
   }
 
+  toHomeClick() {
+    this.router.navigateByUrl('/groups')
+  }
+
   logOut() {
     this.authorizationService.logOut();
     this.router.navigateByUrl('/login');

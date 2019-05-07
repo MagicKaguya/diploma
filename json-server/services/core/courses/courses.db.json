@@ -2,7 +2,8 @@
   "groups": [
       {
         "id": "course",
-        "name": "Занятия"
+        "name": "Занятия",
+        "undeletable": true
       },
       {
         "id": "consult",

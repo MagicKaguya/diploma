@@ -15,6 +15,7 @@
   </section>
   <div class="video-buttons">
     <button (click)="openGroupClick(groupItem.id)" class="video-button main-button">Посмотреть</button>
+    <button *ngIf="!groupItem.undeletable" (click)="deleteGroup(groupItem.id)" class="video-button cancel-button">Удалить</button>
     <!-- <button (click)="editCourseClick(coursesItem.id)" class="video-button main-button">Edit</button>
     <button (click)="onCourseClick(coursesItem.id)" class="video-button main-button">Delete</button> -->
   </div>

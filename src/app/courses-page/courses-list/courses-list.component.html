@@ -1,10 +1,7 @@
 <div class="video-course-block">
-  <app-courses-item *ngFor="let item of courses|orderByPipe" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
+  <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
     (courseClick)="onRemoveCourseClick($event)">
   </app-courses-item>
-</div>
-<div class="centered-text" *ngIf='!isEmpty()'>
-  <button class="load-more-button" (click)="onLoadMoreClick()">LOAD MORE</button>
 </div>
 <div class="no-video-information" *ngIf='isEmpty()'>
   <span class="centered-text">Пусто! Поскорее создайте новое событие.</span>

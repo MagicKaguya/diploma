@@ -11,6 +11,7 @@ export class GroupsItemComponent implements OnInit {
 
   @Input() groupItem: Group;
   @Output() groupClick = new EventEmitter<string>();
+  @Output() removeGroup: EventEmitter<string> = new EventEmitter();
 
   constructor(
     private router: Router
@@ -23,6 +24,10 @@ export class GroupsItemComponent implements OnInit {
   public openGroupClick(id: string) {
     console.log(id)
     this.groupClick.emit(id);
+  }
+
+  public deleteGroup(id: string) {
+    this.removeGroup.emit(id);
   }
 
 }

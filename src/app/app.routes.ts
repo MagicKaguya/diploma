@@ -6,12 +6,12 @@ import { AuthorizationComponent } from './authorization/authorization/authorizat
 import { AuthorizeGuard } from './guards/authorize.guard';
 import { LoginGuard } from './guards/login.guard';
 import { RegistrationComponent } from './authorization/registration/registration.component';
-import { GroupsContainerComponent } from './courses-page/groups-container/groups-container.component';
 import { EditAddGroupComponent } from './courses-page/edit-add-group/edit-add-group.component';
+import { GroupsListComponent } from './courses-page/groups-list/groups-list.component';
 
 export const ROUTES: Route[] = [
     { path: '', redirectTo: 'groups', pathMatch: 'full' },
-    { path: 'groups', component: GroupsContainerComponent, canActivate: [AuthorizeGuard] },
+    { path: 'groups', component: GroupsListComponent, canActivate: [AuthorizeGuard] },
     { path: 'groups/:id', component: EditAddGroupComponent, canActivate: [AuthorizeGuard] },
     { path: 'groups/:id/courses', component: CoursesPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'courses/:id', component: EditAddPageContainerComponent, canActivate: [AuthorizeGuard] },
