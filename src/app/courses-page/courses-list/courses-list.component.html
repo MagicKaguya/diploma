@@ -1,7 +1,36 @@
 <div class="video-course-block">
-  <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
-    (courseClick)="onRemoveCourseClick($event)">
-  </app-courses-item>
+  <div *ngIf="!isSchedule()">
+    <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
+      (courseClick)="onRemoveCourseClick($event)">
+    </app-courses-item>
+  </div>
+  <table *ngIf="isSchedule()" class="schedule">
+    <thead>
+      <tr>
+        <th>Номер пары</th>
+        <th>Понедельник</th>
+        <th>Вторник</th>
+        <th>Среда</th>
+        <th>Четверг</th>
+        <th>Пятница</th>
+        <th>Суббота</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of courses">
+        <td>
+          <div>{{item.pair}}</div>
+          <div>{{item.time}}</div>
+        </td>
+        <td *ngFor="let pair of item.info">
+          <div><i>{{pair.title}}</i></div>
+          <div>{{pair.type}}</div>
+          <div>{{pair.teacher}}</div>
+          <div>{{pair.class}}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="no-video-information" *ngIf='isEmpty()'>
   <span class="centered-text">Пусто! Поскорее создайте новое событие.</span>

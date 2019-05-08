@@ -6,7 +6,7 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CoursesItemComponent } from './courses-item/courses-item.component';
 import { CoursesPageContainerComponent } from './courses-page-container/courses-page-container.component';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
-import { OrderByPipePipe } from './courses-list/order-by-pipe.pipe';
+// import { OrderByPipePipe } from './courses-list/order-by-pipe.pipe';
 import { SearchPipePipe } from './toolbox/search-pipe.pipe';
 import { CoursesService } from './courses.service';
 import { CorsesBorderDirective } from './courses-item/corses-border.directive';
@@ -29,7 +29,7 @@ import { EditAddGroupComponent } from './edit-add-group/edit-add-group.component
     PipeModule,
     ButtonModule
   ],
-  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, OrderByPipePipe, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsItemComponent, EditAddGroupComponent],
+  declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsItemComponent, EditAddGroupComponent],
   exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent, GroupsListComponent],
   providers: [SearchPipePipe, CoursesService],
   // schemas: [NO_ERRORS_SCHEMA]

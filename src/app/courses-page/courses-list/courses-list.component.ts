@@ -28,6 +28,10 @@ export class CoursesListComponent {
     this.router.navigateByUrl('/courses/' + id);
   }
 
+  isSchedule() {
+    return this.courses.find(course => course.groupId === 'course');
+  }
+
   isEmpty(): boolean {
     let videoCount = this.courses.length;
 

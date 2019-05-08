@@ -13,45 +13,103 @@
   "courses": [
     {
       "id": 8693,
-      "title": "duis mollit reprehenderit ad",
-      "creationDate": 1506573564000,
-      "duration": 157,
-      "description": "Est minim ea aute sunt laborum minim eu excepteur. Culpa sint exercitation mollit enim ad culpa aliquip laborum cillum. Dolor officia culpa labore ex eiusmod ut est ea voluptate ea nostrud.",
-      "topRated": false,
+      "pair": "1 пара",
+      "time": "8:20-9:50",
       "groupId": "course",
-      "authors": [
+      "info": [
         {
-          "id": 1370,
-          "firstName": "Polly",
-          "lastName": "Sosa"
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223/4к аудитория"
         }
       ]
     },
     {
-      "id": 4980,
-      "title": "magna excepteur aute deserunt",
-      "creationDate": 1464660156000,
-      "duration": 207,
-      "description": "Sunt culpa officia minim commodo eiusmod irure sunt nostrud. Mollit aliquip id occaecat officia proident anim dolor officia qui voluptate consectetur laborum. Duis incididunt culpa aliqua mollit do fugiat ea dolor mollit irure Lorem tempor.",
-      "topRated": false,
-      "groupId": "consult",
-      "authors": [
+      "id": 1111,
+      "pair": "2 пара",
+      "time": "10:00-11:30",
+      "groupId": "course",
+      "info": [
         {
-          "id": 8413,
-          "firstName": "Greta",
-          "lastName": "Richardson"
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
         },
         {
-          "id": 7458,
-          "firstName": "Deana",
-          "lastName": "Bruce"
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
         },
         {
-          "id": 5508,
-          "firstName": "Patsy",
-          "lastName": "Bright"
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223 аудитория"
         }
       ]
+    },
+    {
+      "id": 2222,
+      "title": "",
+      "teacher": "",
+      "time": "",
+      "class": "",
+      "groupId": "consult"
+    },
+    {
+      "id": 3333,
+      "title": "",
+      "teacher": "",
+      "time": "",
+      "class": "",
+      "groupId": "consult"
+    },
+    {
+      "id": 4444,
+      "title": "",
+      "teacher": "",
+      "time": "",
+      "class": "",
+      "groupId": "consult"
     }
   ]
 }

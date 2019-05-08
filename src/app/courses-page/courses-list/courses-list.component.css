@@ -26,3 +26,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.schedule {
+    width: 80%;
+}
+
+.schedule td {
+    text-align: center;
+    padding: 10px;
+}

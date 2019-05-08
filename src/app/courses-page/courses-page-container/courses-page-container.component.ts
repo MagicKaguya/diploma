@@ -30,6 +30,7 @@ export class CoursesPageContainerComponent implements OnInit {
     this.activatedRoute.paramMap
     .subscribe((data) => {
      this.id = data.get('id');
+     console.log(this.id)
     });
     
     this.getCoursesItems();
@@ -47,6 +48,10 @@ export class CoursesPageContainerComponent implements OnInit {
 
   onRemoveCourse(courseId: number) {
     this.popupService.showPopup(this.removeCourse.bind(this, courseId));
+  }
+
+  public isUndeletable() {
+    return this.id === 'course';
   }
 
   private removeCourse(courseId: number) {
