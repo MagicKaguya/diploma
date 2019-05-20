@@ -1,24 +1,42 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CoursesItem } from '../courses-item.model';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { PopupService } from '../popup.service';
 
 @Component({
   selector: 'app-courses-list',
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.css']
 })
-export class CoursesListComponent {
+export class CoursesListComponent implements OnInit {
 
-  @Input() courses: CoursesItem[] = [];
-  @Output() loadMore: EventEmitter<void> = new EventEmitter();
+  @Input() courses: CoursesItem[];
+  @Output() changedCourses: EventEmitter<any> = new EventEmitter();
   @Output() removeCourse: EventEmitter<number> = new EventEmitter();
 
-  constructor(private router: Router) {
+  public scheduleForm: FormGroup;
+  public onEdit = false;
+  public editableItem;
+  public editablePair;
+  public editablePairIndex;
+
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private popupService: PopupService
+    ) {
+      
    }
 
-  onLoadMoreClick() {
-    this.loadMore.emit();
-  }
+   get courseData() {
+    console.log(this.courses)
+    return this.courses
+   }
+
+   ngOnInit() {
+    
+   }
 
   onRemoveCourseClick(id) {
     this.removeCourse.emit(id);
@@ -28,7 +46,22 @@ export class CoursesListComponent {
     this.router.navigateByUrl('/courses/' + id);
   }
 
-  isSchedule() {
+  onEditScheduleClick(item, pair, index) {
+    // this.changedCourses.emit(this.courses);
+    // this.onEdit = !this.onEdit;
+    // console.log(item);
+    // console.log(index);
+    this.editableItem = item;
+    this.editablePair = pair;
+    this.editablePairIndex = index;
+
+    if (this.editablePairIndex) {
+      this.popupService.showPopup();
+    }
+    
+  }
+
+  find() {
     return this.courses.find(course => course.groupId === 'course');
   }
 

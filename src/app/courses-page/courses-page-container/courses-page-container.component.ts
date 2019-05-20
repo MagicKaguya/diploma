@@ -32,6 +32,8 @@ export class CoursesPageContainerComponent implements OnInit {
      this.id = data.get('id');
      console.log(this.id)
     });
+
+    console.log(this.courses)
     
     this.getCoursesItems();
   }
@@ -41,13 +43,14 @@ export class CoursesPageContainerComponent implements OnInit {
     this.getCoursesItems(false);
   }
 
-  onLoadMore() {
-    this.shownCount += 5;
-    this.getCoursesItems();
+  changedCourses(courses) {
+    console.log(courses)
+    // this.shownCount += 5;
+    // this.getCoursesItems();
   }
 
   onRemoveCourse(courseId: number) {
-    this.popupService.showPopup(this.removeCourse.bind(this, courseId));
+    // this.popupService.showPopup(this.removeCourse.bind(this, courseId));
   }
 
   public isUndeletable() {

@@ -10,8 +10,8 @@ export class PopupService {
 
   constructor() { }
 
-  public showPopup(onAcceptHandler): void {
-    this.onAcceptHandler = onAcceptHandler;
+  public showPopup(): void {
+    // this.onAcceptHandler = onAcceptHandler;
     this.isVisible = true;
   }
 

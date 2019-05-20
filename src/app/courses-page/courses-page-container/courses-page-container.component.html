@@ -1,5 +1,5 @@
 <div>
   <app-toolbox *ngIf="!isUndeletable()" (search)="onSearch($event)"></app-toolbox>
   <app-confirmation-modal></app-confirmation-modal>
-  <app-courses-list (removeCourse)="onRemoveCourse($event)" (loadMore)="onLoadMore()" [courses]="courses"></app-courses-list>
+  <app-courses-list (removeCourse)="onRemoveCourse($event)" (changedCourses)="changedCourses($event)" [courses]="courses"></app-courses-list>
 </div>

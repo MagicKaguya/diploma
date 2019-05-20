@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PopupService } from '../popup.service';
 
 @Component({
@@ -8,9 +8,19 @@ import { PopupService } from '../popup.service';
 })
 export class ConfirmationModalComponent implements OnInit {
 
+  @Input() pair;
+  @Input() item;
+  @Input() index;
+
+  public data;
+
   constructor(private popupService: PopupService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data = this.pair;
+    console.log(this.data)
+
+  }
 
   acceptDelete() {
     this.popupService.onAcceptHandler();
