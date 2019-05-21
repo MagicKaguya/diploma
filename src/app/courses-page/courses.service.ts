@@ -60,6 +60,10 @@ export class CoursesService {
     return this.apiService.put(`/api/courses/${id}`, course);
   }
 
+  public updateSchedule$(id, pairNumber, data) {
+    return this.apiService.put(`/api/groups/course/courses/${id}/${pairNumber}`, data);
+  }
+
   public getBreadcrumbsSubject() {
     return this.mySubject.asObservable();
   }

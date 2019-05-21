@@ -8,7 +8,7 @@
     left: 0;
     align-items: center;
     justify-content: center;
-    background-color: rgba(66, 65, 67, 0.1);
+    background-color: rgba(66, 65, 67, 0.5);
 }
 
 .container-popup--visible {
@@ -19,8 +19,7 @@
     display: flex;
     background-color: white;
     width: 400px;
-    height: 300px;
-
+    height: 400px;
 }
 
 .popup-content {
@@ -32,11 +31,21 @@
     justify-content: center;
 }
 
-.popup-button {
-    margin: 10% 5%;
-    cursor: pointer;
+.day-input {
+    margin: 10px;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-family: 'Roboto';
 }
 
-.delete-img {
-    margin: 0 35%;
+.day-label {
+    position: relative;
+    top: 15px;
+    width: 105px;
+    float: left;
+    text-align: right;
+}
+.day-button {
+    margin: 20px;
 }

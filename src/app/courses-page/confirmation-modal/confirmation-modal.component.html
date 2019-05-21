@@ -1,14 +1,40 @@
-<div *ngIf='showVisiblePop()' class="container-popup">
-  <div class="popup">
-    <div *ngIf='data' class="popup-content">
-        <div>{{data.title}}</div>
-        <div>{{data.type}} </div>
-        <div>{{data.teacher}} </div>
-        <div>{{data.class}}</div>
-      <div class="popup-buttons">
-        <button class="popup-button" (click)="acceptDelete()">Yes</button>
-        <button class="popup-button" (click)="undoDelete()">No</button>
+<form *ngIf="showVisiblePop() && dayForm" [formGroup]="dayForm" (ngSubmit)="saveChanges()">
+  <div class="container-popup">
+    <div class="popup">
+      <div *ngIf='data' class="popup-content">
+        <div >
+          <label class="day-label">
+            Предмет:
+          </label>
+          <div>
+            <input class="day-input" formControlName="title" placeholder="Предмет" />
+          </div>
+        </div>
+        <div >
+          <label class="day-label">
+            Тип:
+          </label>
+          <div>
+              <input class="day-input" formControlName="type" placeholder="Тип" />
+          </div>
+        </div>
+        <div>
+          <label class="day-label">
+            Преподаватель:
+          </label>
+          <input class="day-input" formControlName="teacher" placeholder="Преподаватель" />
+        </div>
+        <div>
+          <label class="day-label">
+            Аудитория:
+          </label>
+          <input class="day-input" formControlName="class" placeholder="Аудитория" />
+        </div>
+        <div class="popup-buttons">
+          <button class="main-button day-button" (click)="saveChanges()">Сохранить</button>
+          <button class="main-button day-button" (click)="hideVisiblePop()">Отмена</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</form>

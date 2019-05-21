@@ -37,6 +37,24 @@ module.exports = (server) => {
         return groups.find((group) => group.id === id);
     }
 
+    function editSchedule(data, groupId, courseId, pairNumber) {
+        const state = _.cloneDeep(server.db.getState());
+
+        console.log(state)
+
+        // const foundCourseIx = state.courses.findIndex((course) => course.id === id);
+
+        // if (foundCourseIx === -1) {
+        //     return false;
+        // }
+
+        // state.courses.splice(foundCourseIx, 1, editedCourse);
+
+        // server.db.setState(state);
+
+        // return true;
+    }
+
     function editCourse(id, editedCourse) {
         const state = _.cloneDeep(server.db.getState());
 
@@ -137,11 +155,6 @@ module.exports = (server) => {
     router.post('/groups', (req, res, next) => {
         const group = req.body;
 
-        // if (!validateCourse(course)) {
-        //     sendBadRequest(res);
-        //     return;
-        // }
-
         addGroup(group);
 
         sendOk(res);
@@ -175,6 +188,22 @@ module.exports = (server) => {
         }
 
         res.json(foundCourse);
+    });
+
+    router.put('/groups/:id/courses/:identifier/:pairNumber', (req, res, next) => {
+        const data = req.body;
+
+        const groupId = req.params.id;
+        const courseId = +req.params.identifier;
+        const pairNumber = +req.params.pairNumber;
+
+        if (isNaN(courseId)) {
+            sendBadRequest(res);
+            return;
+        }
+        editSchedule(data, groupId, courseId, pairNumber);
+
+        sendOk(res);
     });
 
     router.put('/courses/:id', (req, res, next) => {
