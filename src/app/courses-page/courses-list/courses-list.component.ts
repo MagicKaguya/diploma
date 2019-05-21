@@ -29,14 +29,7 @@ export class CoursesListComponent implements OnInit {
       
    }
 
-   get courseData() {
-    console.log(this.courses)
-    return this.courses
-   }
-
-   ngOnInit() {
-    
-   }
+  ngOnInit() {}
 
   onRemoveCourseClick(id) {
     this.removeCourse.emit(id);
@@ -46,19 +39,18 @@ export class CoursesListComponent implements OnInit {
     this.router.navigateByUrl('/courses/' + id);
   }
 
-  onEditScheduleClick(item, pair, index) {
-    // this.changedCourses.emit(this.courses);
-    // this.onEdit = !this.onEdit;
-    // console.log(item);
-    // console.log(index);
-    this.editableItem = item;
-    this.editablePair = pair;
-    this.editablePairIndex = index;
+  onEditScheduleClick() {
+    this.onEdit = !this.onEdit;
+  }
 
-    if (this.editablePairIndex) {
+  onEditItemClick(item, pair, index) {
+    if (this.onEdit) {
+      this.editableItem = item;
+      this.editablePair = pair;
+      this.editablePairIndex = index;
+
       this.popupService.showPopup();
-    }
-    
+    } else return;
   }
 
   find() {

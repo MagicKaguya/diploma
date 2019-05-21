@@ -34,4 +34,11 @@
 .schedule td {
     text-align: center;
     padding: 10px;
+    width: 15%;
+}
+
+.edit-schedule {
+    border: 1px solid rgb(168, 163, 163); 
+    border-style: dashed;
+    cursor: pointer;
 }

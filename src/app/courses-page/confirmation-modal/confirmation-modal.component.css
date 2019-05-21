@@ -8,7 +8,7 @@
     left: 0;
     align-items: center;
     justify-content: center;
-    background-color: rgba(66, 65, 67, 0.03);
+    background-color: rgba(66, 65, 67, 0.1);
 }
 
 .container-popup--visible {

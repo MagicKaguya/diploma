@@ -17,9 +17,6 @@ export class ConfirmationModalComponent implements OnInit {
   constructor(private popupService: PopupService) { }
 
   ngOnInit() {
-    this.data = this.pair;
-    console.log(this.data)
-
   }
 
   acceptDelete() {
@@ -32,7 +29,11 @@ export class ConfirmationModalComponent implements OnInit {
   }
 
   showVisiblePop() {
-    return this.popupService.isVisible;
+    const isVisible = this.popupService.isVisible;
+    if (isVisible) {
+      this.data = this.pair;
+    }
+    return isVisible;
   }
 
 }
