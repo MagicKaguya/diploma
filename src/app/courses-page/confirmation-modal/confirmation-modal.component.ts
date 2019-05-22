@@ -68,6 +68,8 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
       
     });
 
+    location.reload();
+
     this.hideVisiblePop();
   }
 

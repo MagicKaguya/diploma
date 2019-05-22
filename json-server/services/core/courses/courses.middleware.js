@@ -39,20 +39,13 @@ module.exports = (server) => {
 
     function editSchedule(data, groupId, courseId, pairNumber) {
         const state = _.cloneDeep(server.db.getState());
+        const currentGroup = _.filter(state.courses, course => course.groupId === groupId);
+        const find = _.find(currentGroup, day => day.id === courseId);
 
-        console.log(state)
+        find.info.splice(pairNumber, 1, data);
+        server.db.setState(state);
 
-        // const foundCourseIx = state.courses.findIndex((course) => course.id === id);
-
-        // if (foundCourseIx === -1) {
-        //     return false;
-        // }
-
-        // state.courses.splice(foundCourseIx, 1, editedCourse);
-
-        // server.db.setState(state);
-
-        // return true;
+        return true;
     }
 
     function editCourse(id, editedCourse) {
