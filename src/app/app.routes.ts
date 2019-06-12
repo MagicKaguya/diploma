@@ -14,7 +14,7 @@ export const ROUTES: Route[] = [
     { path: 'groups', component: GroupsListComponent, canActivate: [AuthorizeGuard] },
     { path: 'groups/:id', component: EditAddGroupComponent, canActivate: [AuthorizeGuard] },
     { path: 'groups/:id/courses', component: CoursesPageContainerComponent, canActivate: [AuthorizeGuard] },
-    { path: 'courses/:id', component: EditAddPageContainerComponent, canActivate: [AuthorizeGuard] },
+    { path: 'groups/:identifier/courses/:id', component: EditAddPageContainerComponent, canActivate: [AuthorizeGuard] },
     { path: 'login', component: AuthorizationComponent, canActivate: [LoginGuard] },
     { path: 'registration', component: RegistrationComponent },
     { path: '**', component: NotFoundPageComponent }

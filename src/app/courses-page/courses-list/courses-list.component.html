@@ -1,8 +1,11 @@
 <div class="video-course-block">
-  <div *ngIf="!isSchedule" class="items-block">
-    <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
-      (courseClick)="onRemoveCourseClick($event)">
-    </app-courses-item>
+  <div *ngIf="!isSchedule">
+    <app-toolbox></app-toolbox>
+    <div class="items-block">
+      <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
+        (courseClick)="onRemoveCourseClick($event)">
+      </app-courses-item>
+    </div>
   </div>
   <div *ngIf="isSchedule">
     <table class="schedule">

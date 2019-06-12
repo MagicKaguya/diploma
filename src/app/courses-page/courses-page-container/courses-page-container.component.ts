@@ -5,6 +5,8 @@ import { CoursesItem } from '../courses-item.model';
 import { Group } from '../groups.model';
 import { Router, RoutesRecognized, ActivatedRouteSnapshot, Event, ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { AuthorizationService } from 'src/app/authorization/authorization.service';
+import { StorageService } from 'src/app/storage/storage.service';
 
 interface Route {
   route: RoutesRecognized;
@@ -19,18 +21,25 @@ interface Route {
 
 export class CoursesPageContainerComponent implements OnInit {
   id: string;
-  courses: CoursesItem[] = [];
+  courses = [];
   shownCount: number = 5;
 
   private query: string = '';
 
-  constructor(private coursesService: CoursesService, private popupService: PopupService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private coursesService: CoursesService, 
+    private popupService: PopupService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthorizationService,
+    private localStorage: StorageService
+    ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap
     .subscribe((data) => {
      this.id = data.get('id');
-     console.log(this.id)
+     this.localStorage.setItem('groupId', this.id);
     });
 
     console.log(this.courses)
@@ -66,8 +75,19 @@ export class CoursesPageContainerComponent implements OnInit {
 
   private getCoursesItems(isLoaderShown=true) {
     this.coursesService.getList$(this.id, isLoaderShown)
-    .subscribe((courses: CoursesItem[]) => {
-      this.courses = courses;         
+    .subscribe(courses => {
+      this.authService.user$.subscribe(user => {
+        if (!user) {
+          return;
+        }
+        this.courses = courses.filter(course => {
+          if (course.groupId === 'course') {
+            return course.courseName === user.courseName && course.courseNumber[0] === user.courseNumber[0] && course.courseNumber[1] === user.courseNumber[1];
+          } else {
+            return user.id === course.userId;
+          }
+        })
+      })       
     });
   }
 

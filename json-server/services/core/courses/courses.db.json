@@ -12,10 +12,12 @@
   ],
   "courses": [
     {
-      "id": 8693,
+      "id": 1,
       "pair": "1 пара",
       "time": "8:20-9:50",
       "groupId": "course",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ",
       "info": [
         {
           "title": "Численные методы",
@@ -56,10 +58,12 @@
       ]
     },
     {
-      "id": 1111,
+      "id": 2,
       "pair": "2 пара",
       "time": "10:00-11:30",
       "groupId": "course",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ",
       "info": [
         {
           "title": "Математическое моделирование",
@@ -100,10 +104,12 @@
       ]
     },
     {
-      "id": 2222,
+      "id": 3,
       "pair": "3 пара",
       "time": "12:10-13:40",
       "groupId": "course",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ",
       "info": [
         {
           "title": "Математическое моделирование",
@@ -144,10 +150,12 @@
       ]
     },
     {
-      "id": 3333,
+      "id": 4,
       "pair": "4 пара",
       "time": "13:50-15:20",
       "groupId": "course",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ",
       "info": [
         {
           "title": "СГТФДП",
@@ -188,10 +196,242 @@
       ]
     },
     {
-      "id": 44,
+      "id": 5,
       "pair": "5 пара",
       "time": "15:40-17:10",
       "groupId": "course",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ",
+      "info": [
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "СГТФДП",
+          "type": "Практика",
+          "teacher": "Лашкарев А. Н.",
+          "class": "215/6к"
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pair": "1 пара",
+      "time": "8:20-9:50",
+      "groupId": "course",
+      "courseNumber": ["Бакалавриат", 1],
+      "courseName" : "МиКН",
+      "info": [
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "Численные методы",
+          "type": "Практика",
+          "teacher": "Ким И.Г",
+          "class": "215/4к"
+        },
+        {
+          "title": "ВвК",
+          "type": "Практика",
+          "teacher": "Мерзляков А.С.",
+          "class": "223/4к"
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "ВвК",
+          "type": "Лекция",
+          "teacher": "Мерзляков А.С.",
+          "class": "223/4к"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pair": "2 пара",
+      "time": "10:00-11:30",
+      "groupId": "course",
+      "courseNumber": ["Бакалавриат", 1],
+      "courseName" : "МиКН",
+      "info": [
+        {
+          "title": "Математическое моделирование",
+          "type": "Практика",
+          "teacher": "Быкова Т. С",
+          "class": "215/4к"
+        },
+        {
+          "title": "Проффесиональный иностранный язык",
+          "type": "Практика",
+          "teacher": "Касаткина Т.Ю",
+          "class": "223/4к"
+        },
+        {
+          "title": "Математическое моделирование",
+          "type": "Лекция",
+          "teacher": "Быкова Т. С",
+          "class": "223/4к"
+        },
+        {
+          "title": "ПАБП",
+          "type": "Практика",
+          "teacher": "Красноперов К. М.",
+          "class": "216/4к"
+        },
+        {
+          "title": "Психология личности",
+          "type": "Лекция",
+          "teacher": "Васюра С. А.",
+          "class": "212/4к"
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pair": "3 пара",
+      "time": "12:10-13:40",
+      "groupId": "course",
+      "courseNumber": ["Бакалавриат", 1],
+      "courseName" : "МиКН",
+      "info": [
+        {
+          "title": "Математическое моделирование",
+          "type": "Практика",
+          "teacher": "Быкова Т. С",
+          "class": "204/6к"
+        },
+        {
+          "title": "ДГТСП",
+          "type": "Практика",
+          "teacher": "Тинюкова Т. С.",
+          "class": "217/4к"
+        },
+        {
+          "title": "Численные методы",
+          "type": "Лекция",
+          "teacher": "Латыпова Н. В.",
+          "class": "219/4к"
+        },
+        {
+          "title": "ПАБП",
+          "type": "Практика",
+          "teacher": "Красноперов К. М.",
+          "class": "221/4к"
+        },
+        {
+          "title": "Психология личности",
+          "type": "Лекция",
+          "teacher": "Васюра С. А.",
+          "class": "212/4к"
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pair": "4 пара",
+      "time": "13:50-15:20",
+      "groupId": "course",
+      "courseNumber": ["Бакалавриат", 1],
+      "courseName" : "МиКН",
+      "info": [
+        {
+          "title": "СГТФДП",
+          "type": "Лекция",
+          "teacher": "Лашкарев А. Н.",
+          "class": "204/6к"
+        },
+        {
+          "title": "ДГТСП",
+          "type": "Лекция",
+          "teacher": "Тинюкова Т. С.",
+          "class": "210/4к"
+        },
+        {
+          "title": "МПМ",
+          "type": "Лекция",
+          "teacher": "Баранова Н. А",
+          "class": "222/4к"
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        },
+        {
+          "title": "",
+          "type": "",
+          "teacher": "",
+          "class": ""
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pair": "5 пара",
+      "time": "15:40-17:10",
+      "groupId": "course",
+      "courseNumber": ["Бакалавриат", 1],
+      "courseName" : "МиКН",
       "info": [
         {
           "title": "",
@@ -237,7 +477,8 @@
       "teacher": "",
       "time": "",
       "class": "",
-      "groupId": "consult"
+      "groupId": "consult",
+      "userId": 1
     },
     {
       "id": 3333,
@@ -245,7 +486,8 @@
       "teacher": "",
       "time": "",
       "class": "",
-      "groupId": "consult"
+      "groupId": "consult",
+      "userId": 2
     },
     {
       "id": 4444,
@@ -253,7 +495,8 @@
       "teacher": "",
       "time": "",
       "class": "",
-      "groupId": "consult"
+      "groupId": "consult",
+      "userId": 2
     }
   ]
 }

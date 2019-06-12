@@ -1,6 +1,6 @@
 <div class="toolbox">
   <div class="search">
-    <input *ngIf="!isGroupsShow"class="search-item" type="text" placeholder="Поиск.." [(ngModel)]="searchValue" (ngModelChange)="onSearchChange()">
+    <!-- <input *ngIf="!isGroupsShow"class="search-item" type="text" placeholder="Поиск.." [(ngModel)]="searchValue" (ngModelChange)="onSearchChange()"> -->
   </div>
   <button *ngIf="!isGroupsShow" class="main-button" (click)="addCourse()">Добавить событие</button>
   <button *ngIf="isGroupsShow" class="main-button" (click)="addGroup()">Добавить группу</button>

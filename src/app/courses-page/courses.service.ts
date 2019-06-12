@@ -14,7 +14,7 @@ export class CoursesService {
     this.mySubject = new BehaviorSubject('');
   }
 
-  public getList$(id: string, isLoaderShown: boolean): Observable<CoursesItem[]> {
+  public getList$(id: string, isLoaderShown: boolean): Observable<any> {
     return this.apiService.get(
       // `/api/groups/${id}/courses?count=${count}&start=0${query ? '&textFragment=' + query : ''}`,
       `/api/groups/${id}/courses`,

@@ -20,6 +20,7 @@ import {ButtonModule} from 'primeng/button';
 import { GroupsListComponent } from './groups-list/groups-list.component';
 import { GroupsItemComponent } from './groups-item/groups-item.component';
 import { EditAddGroupComponent } from './edit-add-group/edit-add-group.component';
+import { StorageService } from '../storage/storage.service';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { EditAddGroupComponent } from './edit-add-group/edit-add-group.component
   ],
   declarations: [EditAddPageContainerComponent, EditAddPageCoursesAutorsComponent, EditAddPageCoursesDateComponent, EditAddPageCoursesDurationComponent, ToolboxComponent, CoursesListComponent, CoursesItemComponent, CoursesPageContainerComponent, ConfirmationModalComponent, SearchPipePipe, CorsesBorderDirective, NotFoundPageComponent, GroupsListComponent, GroupsItemComponent, EditAddGroupComponent],
   exports: [CoursesPageContainerComponent, ToolboxComponent, CoursesListComponent, ConfirmationModalComponent, EditAddPageContainerComponent, GroupsListComponent],
-  providers: [SearchPipePipe, CoursesService],
+  providers: [SearchPipePipe, CoursesService, StorageService],
   // schemas: [NO_ERRORS_SCHEMA]
 })
 export class CoursesPageModule { }

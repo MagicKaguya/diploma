@@ -20,18 +20,50 @@
     <button (click)="cancelOperation()">Cancel</button>
   </div>
 </div> -->
-<div class="edit-add-page-container" [formGroup]="form">
+<div class="authorization-aside" [formGroup]="form">
   <div>
     <b>Название предмета</b>
-    <input formControlName="title" class="course-title">
-    <!-- <div class="error-message">{{ errorMessage(formControls.title) }}</div> -->
   </div>
   <div>
-    <p>Преподаватель</p>
-    <input formControlName="teacher" class="course-title">
+    <input class="authorization-input" placeholder="Предмет" formControlName="title">
+  </div>
+  <div>
+    <b>Преподаватель</b>
+  </div>
+  <div>
+    <input class="authorization-input" placeholder="Преподаватель" formControlName="teacher">
+  </div>
+  <div>
+    <b>Дата</b>
+  </div>
+  <div>
+    <input class="authorization-input" placeholder="Время" formControlName="time">
+  </div>
+  <div>
+    <b>Аудитория</b>
+  </div>
+  <div>
+    <input class="authorization-input" placeholder="Аудитория" formControlName="class">
+  </div>
+  <div>
+    <button style="margin-bottom: 30px;" class="main-button video-button" (click)="saveChanges()"
+      [disabled]="isConfirmButtonDisabled">Сохранить</button>
+    <button style="margin-bottom: 30px; margin-left: 30px" class="main-button video-button"
+      (click)="cancel()">Отмена</button>
+  </div>
+</div>
+<!-- <div class="edit-add-page-container" [formGroup]="form">
+  <div>
+    <b>Название предмета</b>
+    <input formControlName="title" class="course-title"> -->
+    <!-- <div class="error-message">{{ errorMessage(formControls.title) }}</div> -->
+  <!-- </div>
+  <div>
+    <b>Преподаватель</b>
+    <input formControlName="teacher" class="course-title"> -->
     <!-- <textarea [formControlName]="formControls.description" class="course-description"></textarea> -->
     <!-- <div class="error-message">{{ errorMessage(formControls.description) }}</div> -->
-  </div>
+  <!-- </div>
   <div>
     <b>Время</b>
     <input formControlName="time" class="course-title">
@@ -39,15 +71,15 @@
   <div>
     <b>Аудитория</b>
     <input formControlName="class" class="course-title">
-  </div>
+  </div> -->
   <!-- <app-edit-add-page-courses-date [formControlName]="formControls.date"></app-edit-add-page-courses-date>
     <div class="error-message">{{ errorMessage(formControls.date) }}</div>
     <app-edit-add-page-courses-duration [formControlName]="formControls.duration"></app-edit-add-page-courses-duration>
     <div class="error-message">{{ errorMessage(formControls.duration) }}</div>
     <app-edit-add-page-courses-autors [authors]="authors" [formControlName]="formControls.authors"></app-edit-add-page-courses-autors>
     <div class="error-message">{{ errorMessage(formControls.authors) }}</div> -->
-  <div class="save-cancel-buttons">
+  <!-- <div class="save-cancel-buttons">
     <button (click)="saveChanges()" class="save-button">Save</button>
     <button (click)="cancelOperation()">Cancel</button>
   </div>
-</div>
+</div> -->

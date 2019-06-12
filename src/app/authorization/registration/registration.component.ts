@@ -32,7 +32,9 @@ export class RegistrationComponent implements OnInit {
       this.getPrevoiusUserId();
       if (val === 'VALID') {
         this.isRegisterButtonDisabled = false;
-      } 
+      } else {
+        this.isRegisterButtonDisabled = true;
+      }
     });
 
     this.registrationForm.controls.courseNumber.valueChanges.subscribe(val => console.log(val));

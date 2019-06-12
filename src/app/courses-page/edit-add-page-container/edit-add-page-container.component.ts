@@ -9,6 +9,8 @@ import { durationValidator } from '../../validators/duration.validator';
 import { combineLatest } from 'rxjs';
 import { AuthorsService } from '../authors.service';
 import { Author } from '../author.model';
+import { StorageService } from 'src/app/storage/storage.service';
+import { AuthorizationService } from 'src/app/authorization/authorization.service';
 
 @Component({
   selector: 'app-edit-add-page-container',
@@ -16,7 +18,11 @@ import { Author } from '../author.model';
   styleUrls: ['./edit-add-page-container.component.css']
 })
 export class EditAddPageContainerComponent implements OnInit, OnDestroy {
+
+  public isConfirmButtonDisabled = true;
   public id: number;
+  public groupId: string;
+  public userId: number;
   public form: FormGroup;
   public formControls = {
     title: 'title',
@@ -26,7 +32,15 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
   };
   // public authors: Author[] = [];
 
-  constructor(private coursesService: CoursesService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private authorsService: AuthorsService) { }
+  constructor(
+    private coursesService: CoursesService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private formBuilder: FormBuilder, 
+    private authorsService: AuthorsService,
+    private localStorage: StorageService,
+    private authService: AuthorizationService
+    ) { }
 
   // errorMessage(formControlName: string) {
   //   const formControl: AbstractControl = this.form.get(formControlName);
@@ -56,12 +70,24 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
   ngOnInit() {
     combineLatest(this.route.params, this.authorsService.getAuthors$())
       .subscribe(([params, authors]) => {
-        this.id = +params['id'];
+        this.id = params['id'];
         // this.authors = authors;
         this.getCourseInfo();
       });
+    
+    this.groupId = this.localStorage.getItem('groupId');
+    this.authService.user$.subscribe(user => {
+      this.userId = user.id;
+    })
 
     this.createForm();
+    this.form.statusChanges.subscribe(val => {
+      if (val === 'VALID') {
+        this.isConfirmButtonDisabled = false;
+      } else {
+        this.isConfirmButtonDisabled = true;
+      }
+    });
   }
 
   getCourseInfo() {
@@ -105,7 +131,9 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
         title: this.form.get('title').value,
         teacher: this.form.get('teacher').value,
         time: this.form.get('time').value,
-        class: this.form.get('class').value
+        class: this.form.get('class').value,
+        groupId: this.groupId,
+        userId: this.userId
     };
 
     if (this.isCourseEditing()) {
@@ -115,12 +143,12 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
     }
 
     courseAction$.subscribe(() => {
-      this.router.navigateByUrl('/courses');
+      this.router.navigateByUrl(`/groups/${this.groupId}/courses`);
     });
   }
 
-  cancelOperation() {
-    this.router.navigateByUrl('/courses');
+  cancel() {
+    this.router.navigateByUrl(`/groups/${this.groupId}/courses`);
   }
 
   ngOnDestroy() {
@@ -135,10 +163,10 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
 
   private createForm() {
     this.form = this.formBuilder.group({
-      title: [''],
-      teacher: [''],
-      time: [''],
-      class: ['']
+      title: ['', Validators.required],
+      teacher: ['', Validators.required],
+      time: ['', Validators.required],
+      class: ['', Validators.required]
         // [this.formControls.title]: new FormControl(
         //   '',
         //   [Validators.required, Validators.maxLength(50)]
@@ -171,6 +199,6 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
   }
 
   private isCourseEditing() {
-      return this.router.url !== '/courses/new';
+      return this.router.url !== `/groups/${this.groupId}/courses/new`;
   }
 }

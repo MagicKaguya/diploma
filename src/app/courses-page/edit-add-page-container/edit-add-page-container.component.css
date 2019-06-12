@@ -33,3 +33,21 @@
 .ng-touched.ng-invalid:not(.edit-add-page-container) {
   border-color: brown;
 }
+
+.authorization-aside {
+    display: flex;
+    padding-top: 2%;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authorization-input {
+    margin: 15px;
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-family: 'Roboto';
+}

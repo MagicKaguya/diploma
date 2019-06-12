@@ -155,10 +155,10 @@ module.exports = (server) => {
 
     router.post('/courses', (req, res, next) => {
         const course = req.body;
-        if (!validateCourse(course)) {
-            sendBadRequest(res);
-            return;
-        }
+        // if (!validateCourse(course)) {
+        //     sendBadRequest(res);
+        //     return;
+        // }
 
         addCourse(course);
 

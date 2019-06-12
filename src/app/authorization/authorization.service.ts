@@ -8,7 +8,7 @@ import { ApiService } from '../api/api.service';
 
 @Injectable()
 export class AuthorizationService {
-  private user$: BehaviorSubject<UserInfo> = new BehaviorSubject(null);
+  public user$: BehaviorSubject<UserInfo> = new BehaviorSubject(null);
   private login: string;
   private token: string;
   private tokenKey: string = 'token';

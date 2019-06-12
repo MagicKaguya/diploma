@@ -2,13 +2,8 @@ import { Author } from './author.model';
 
 export interface CoursesItem {
     id: number
-    // title: string
-    // creationDate: number
-    // duration: number
-    // description: string
-    // topRated: boolean,
-    groupId?: string,
-    // authors?: Author[]
+    groupId: string,
+    userId: number
     title: string
     teacher: string
     time: string

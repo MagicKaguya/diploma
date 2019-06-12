@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/cor
 import { Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, debounceTime, filter } from 'rxjs/operators';
+import { StorageService } from 'src/app/storage/storage.service';
 
 @Component({
   selector: 'app-toolbox',
@@ -13,14 +14,20 @@ export class ToolboxComponent implements OnInit, OnDestroy  {
 
   public searchValue: string;
   public isGroupsShow: boolean;
+  public groupId: string;
 
   private searchChange$: Subject<string> = new Subject();
   private searchSubscription: Subscription;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private localStorage: StorageService
+    ) {}
 
   ngOnInit() {
     this.isGroupsShow = this.router.url === '/groups';
+
+    this.groupId = this.localStorage.getItem('groupId');
 
     this.searchSubscription = this.searchChange$
       .pipe(
@@ -40,7 +47,7 @@ export class ToolboxComponent implements OnInit, OnDestroy  {
   }
 
   addCourse() {
-    this.router.navigateByUrl('/courses/new');
+    this.router.navigateByUrl(`/groups/${this.groupId}/courses/new`);
   }
 
   addGroup() {
