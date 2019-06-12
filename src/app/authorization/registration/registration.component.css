@@ -4,9 +4,16 @@
     vertical-align: baseline;
     align-items: center;
     margin: 0 auto;
-    height: 350px;
+    height: 410px;
     background: white;
     padding: 5% 0 10%;
+}
+
+.course-label {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    color: gray;
 }
 
 .authorization-aside {
@@ -28,6 +35,10 @@
     padding: 0 10px;
     outline: none;
     font-family: 'Roboto';
+}
+
+.authorization-select {
+    width: 12%;
 }
 
 .authorization-input.ng-touched.ng-invalid {

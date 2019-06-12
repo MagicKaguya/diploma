@@ -1,12 +1,13 @@
 {
   "users": [
     {
-      "id": 6093,
-      "fakeToken": "58ebfdf7f1f558c5c86e17f6",
+      "id": 1,
       "firstName": "Пользователь",
       "lastName": "Тестовый",
-      "login": "neko",
-      "password": "p0"
+      "login": "testuser",
+      "password": "p0",
+      "courseNumber": ["Бакалавриат", 3],
+      "courseName" : "ПМИ"
     }
   ]
 }

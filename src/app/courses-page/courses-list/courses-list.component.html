@@ -1,40 +1,42 @@
 <div class="video-course-block">
-  <div *ngIf="!find()">
+  <div *ngIf="!isSchedule" class="items-block">
     <app-courses-item *ngFor="let item of courses" [coursesItem]="item" (editCourse)="onEditCourseClick($event)"
       (courseClick)="onRemoveCourseClick($event)">
     </app-courses-item>
   </div>
-  <table *ngIf="find()" class="schedule">
-    <thead>
-      <tr>
-        <th>Номер пары</th>
-        <th>Понедельник</th>
-        <th>Вторник</th>
-        <th>Среда</th>
-        <th>Четверг</th>
-        <th>Пятница</th>
-        <th>Суббота</th>
-        <button (click)="onEditScheduleClick()" class="main-button">⚙</button>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of courses">
-        <td>
-          <div>{{item.pair}}</div>
-          <div>{{item.time}}</div>
-        </td>
-        <td *ngFor="let pair of item.info; let idx = index" (click)="onEditItemClick(item, pair, idx)" [ngClass]="{'edit-schedule': onEdit}">
-          <div>{{pair.title}}</div>
-          <div>{{pair.type}} </div>
-          <div>{{pair.teacher}} </div>
-          <div>{{pair.class}}</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <app-confirmation-modal  [item]="editableItem" [pair]="editablePair" [index]="editablePairIndex">
-  </app-confirmation-modal>
-
+  <div *ngIf="isSchedule">
+    <table class="schedule">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Понедельник</th>
+          <th>Вторник</th>
+          <th>Среда</th>
+          <th>Четверг</th>
+          <th>Пятница</th>
+          <th>Суббота</th>
+          <button (click)="onEditScheduleClick()" class="main-button">⚙</button>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of courses">
+          <td>
+            <div><b>{{item.pair}}</b></div>
+            <div><b>{{item.time}}</b></div>
+          </td>
+          <td *ngFor="let pair of item.info; let idx = index" (click)="onEditItemClick(item, pair, idx)"
+            [ngClass]="{'edit-schedule': onEdit}">
+            <div>{{pair.title}}</div>
+            <div>{{pair.type}} </div>
+            <div>{{pair.teacher}} </div>
+            <div>{{pair.class}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-confirmation-modal [item]="editableItem" [pair]="editablePair" [index]="editablePairIndex">
+    </app-confirmation-modal>
+  </div>
 </div>
 <div class="no-video-information" *ngIf='isEmpty()'>
   <span class="centered-text">Пусто! Поскорее создайте новое событие.</span>

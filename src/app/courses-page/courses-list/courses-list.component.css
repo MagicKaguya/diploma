@@ -1,8 +1,5 @@
 .video-course-block {
     padding: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .load-more-button {
@@ -41,4 +38,11 @@
     border: 1px solid rgb(168, 163, 163); 
     border-style: dashed;
     cursor: pointer;
+}
+
+.items-block {
+    padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

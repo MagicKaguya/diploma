@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CoursesItem } from '../courses-item.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { PopupService } from '../popup.service';
 
@@ -20,15 +20,22 @@ export class CoursesListComponent implements OnInit {
   public editableItem;
   public editablePair;
   public editablePairIndex;
+  public isSchedule = false;
 
   constructor(
     private router: Router,
-    private popupService: PopupService
+    private popupService: PopupService,
+    private activatedRoute: ActivatedRoute
     ) {
       
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.isSchedule = id === 'course';
+    });
+  }
 
   onRemoveCourseClick(id) {
     this.removeCourse.emit(id);
@@ -53,7 +60,10 @@ export class CoursesListComponent implements OnInit {
   }
 
   find() {
-    return this.courses.find(course => course.groupId === 'course');
+    return this.activatedRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      return id === 'course';
+    });
   }
 
   isEmpty(): boolean {

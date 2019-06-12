@@ -45,6 +45,16 @@ export class AuthorizationService {
       );
   }
 
+  public getUsers() {
+    return this.apiService.get('/api/users', false).pipe(
+      map((val: UserInfo[]) => val.pop())
+    )
+  }
+
+  public createUser(user: UserInfo) {
+    return this.apiService.post('/api/users', user);
+  }
+
   public getUserInfo$() {
     if (!this.login) {
       return of(null);

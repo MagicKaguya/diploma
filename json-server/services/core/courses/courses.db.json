@@ -2,7 +2,7 @@
   "groups": [
       {
         "id": "course",
-        "name": "Занятия",
+        "name": "Расписание",
         "undeletable": true
       },
       {
