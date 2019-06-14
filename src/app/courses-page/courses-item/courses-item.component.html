@@ -1,4 +1,23 @@
 <div class="courses-item" [appCorsesBorder]="coursesItem.creationDate">
+  <img src="../assets/udsu_label.png"/>
+  <div>
+    {{coursesItem.title}}
+  </div>
+  <div>
+    {{coursesItem.teacher}}
+  </div>
+  <div>
+    {{coursesItem.time}}
+  </div>
+  <div>
+    {{coursesItem.class}}
+  </div>
+  <div class="group-block">
+    <button style="margin-bottom: 30px;" class="main-button video-button" (click)="editCourseClick(coursesItem.id)">
+      Изменить</button>
+    <button style="margin-bottom: 30px; margin-left: 30px" class="cancel-button video-button"
+      (click)="onCourseClick(coursesItem.id)">Удалить</button>
+  </div>
   <!-- <section class="video-info">
     <div class="main-video-info">
       <h4 class="video-title">{{coursesItem.title|uppercase}}</h4>

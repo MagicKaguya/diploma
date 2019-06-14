@@ -16,6 +16,7 @@ export class CoursesItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.coursesItem)
   }
 
   onCourseClick(id: number) {

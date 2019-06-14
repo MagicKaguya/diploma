@@ -3,11 +3,16 @@
     flex-direction: column;
     align-items: center;
     width: 300px;
-    height: 400px;
+    height: 450px;
     border: 1px solid rgba(163, 161, 161, 0.548); 
     margin: 1%;
+    overflow: auto;
 }
-
+.group-block {
+    padding: 1%;
+    display: flex;
+    justify-content: space-around;
+}
 .video-info {
 
 }

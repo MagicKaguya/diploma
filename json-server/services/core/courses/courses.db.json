@@ -4,10 +4,6 @@
         "id": "course",
         "name": "Расписание",
         "undeletable": true
-      },
-      {
-        "id": "consult",
-        "name": "Консультации"
       }
   ],
   "courses": [
@@ -470,33 +466,6 @@
           "class": ""
         }
       ]
-    },
-    {
-      "id": 2222,
-      "title": "",
-      "teacher": "",
-      "time": "",
-      "class": "",
-      "groupId": "consult",
-      "userId": 1
-    },
-    {
-      "id": 3333,
-      "title": "",
-      "teacher": "",
-      "time": "",
-      "class": "",
-      "groupId": "consult",
-      "userId": 2
-    },
-    {
-      "id": 4444,
-      "title": "",
-      "teacher": "",
-      "time": "",
-      "class": "",
-      "groupId": "consult",
-      "userId": 2
     }
   ]
 }

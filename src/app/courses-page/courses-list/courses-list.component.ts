@@ -3,6 +3,9 @@ import { CoursesItem } from '../courses-item.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { PopupService } from '../popup.service';
+import { AuthorizationService } from 'src/app/authorization/authorization.service';
+import { StorageService } from 'src/app/storage/storage.service';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -21,11 +24,14 @@ export class CoursesListComponent implements OnInit {
   public editablePair;
   public editablePairIndex;
   public isSchedule = false;
+  public groupId: string;
 
   constructor(
     private router: Router,
     private popupService: PopupService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private localStorage: StorageService,
+    private coursesService: CoursesService
     ) {
       
    }
@@ -35,6 +41,7 @@ export class CoursesListComponent implements OnInit {
       const id = params.get('id');
       this.isSchedule = id === 'course';
     });
+    this.groupId = this.localStorage.getItem('groupId');
   }
 
   onRemoveCourseClick(id) {
@@ -42,7 +49,7 @@ export class CoursesListComponent implements OnInit {
   }
 
   onEditCourseClick(id) {
-    this.router.navigateByUrl('/courses/' + id);
+    this.router.navigateByUrl(`/groups/${this.groupId}/courses/${id}`);
   }
 
   onEditScheduleClick() {

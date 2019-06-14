@@ -68,8 +68,8 @@ export class EditAddPageContainerComponent implements OnInit, OnDestroy {
   // }
 
   ngOnInit() {
-    combineLatest(this.route.params, this.authorsService.getAuthors$())
-      .subscribe(([params, authors]) => {
+    this.route.params
+      .subscribe((params) => {
         this.id = params['id'];
         // this.authors = authors;
         this.getCourseInfo();

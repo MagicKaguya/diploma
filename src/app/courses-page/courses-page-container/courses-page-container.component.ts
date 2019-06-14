@@ -59,7 +59,7 @@ export class CoursesPageContainerComponent implements OnInit {
   }
 
   onRemoveCourse(courseId: number) {
-    // this.popupService.showPopup(this.removeCourse.bind(this, courseId));
+    return this.removeCourse(courseId);
   }
 
   public isUndeletable() {

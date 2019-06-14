@@ -75,6 +75,8 @@ module.exports = (server) => {
 
         state.courses.splice(foundCourseIx, 1);
 
+        console.log(state)
+
         server.db.setState(state);
     }
 
@@ -208,10 +210,6 @@ module.exports = (server) => {
             return;
         }
 
-        if (!validateCourse(course)) {
-            sendBadRequest(res);
-            return;
-        }
 
         const isCourseSuccessfullyEdited = editCourse(courseId, course);
         if (!isCourseSuccessfullyEdited){ {
@@ -223,12 +221,12 @@ module.exports = (server) => {
     });
 
     router.delete('/courses/:id', (req, res, next) => {
-        const courseId = +req.params.id;
+        const courseId = req.params.id;
 
-        if (isNaN(courseId)) {
-            sendBadRequest(res);
-            return;
-        }
+        // if (isNaN(courseId)) {
+        //     sendBadRequest(res);
+        //     return;
+        // }
 
         removeCourse(courseId);
 
