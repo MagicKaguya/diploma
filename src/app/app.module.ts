@@ -22,10 +22,12 @@ import { InitializationService } from './initialization/initialization.service';
 import { ApiService } from './api/api.service';
 
 import { AuthorizationInterceptor } from './authorization/authorization.interceptor';
+import { StudentInfoComponent } from './student-info/student-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentInfoComponent
   ],
   imports: [
     BrowserModule, MainModule, CoursesPageModule, AuthorizationModule, HttpClientModule, LoaderModule,
